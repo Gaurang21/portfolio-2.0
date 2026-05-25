@@ -1,0 +1,116 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { MapPin, GraduationCap, Briefcase, Code2 } from "lucide-react";
+
+const stats = [
+  { label: "Years Experience", value: "5+", icon: Briefcase },
+  { label: "Technologies", value: "10+", icon: Code2 },
+  { label: "Companies", value: "4", icon: MapPin },
+  { label: "Degrees", value: "2", icon: GraduationCap },
+];
+
+export default function About() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <section id="about" className="py-24 bg-dark-800/50">
+      <div className="section-container">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="flex items-center gap-3 mb-3">
+            <div className="h-px w-12 bg-primary-500" />
+            <span className="text-primary-400 text-sm font-mono uppercase tracking-widest">
+              About Me
+            </span>
+          </div>
+          <h2 className="section-title mb-12">
+            The person behind the <span className="gradient-text">code</span>
+          </h2>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Bio */}
+            <div className="space-y-6">
+              <p className="text-gray-300 text-lg leading-relaxed">
+                I&apos;m a Full Stack Software Engineer currently working at{" "}
+                <span className="text-primary-300 font-semibold">
+                  Cisco Systems
+                </span>{" "}
+                in San Jose, CA — building enterprise IoT web applications that
+                scale.
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                With a full stack background spanning{" "}
+                <span className="text-gray-200">IoT</span>,{" "}
+                <span className="text-gray-200">SaaS</span>,{" "}
+                <span className="text-gray-200">telecom</span>, and{" "}
+                <span className="text-gray-200">healthcare</span> verticals, I
+                thrive at the intersection of clean code and great user
+                experience. I&apos;m passionate about systems that scale and
+                UIs that delight.
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                I hold an{" "}
+                <span className="text-gray-200">
+                  MS in Computer Science from Cal State East Bay
+                </span>{" "}
+                and a{" "}
+                <span className="text-gray-200">
+                  BE in Computer Engineering from Savitribai Phule Pune
+                  University
+                </span>
+                .
+              </p>
+
+              <div className="flex items-center gap-2 text-gray-400">
+                <MapPin size={16} className="text-primary-400" />
+                <span>Fremont, CA</span>
+              </div>
+
+              <div className="flex flex-wrap gap-3 pt-2">
+                {[
+                  "Clean Code",
+                  "Great UX",
+                  "Systems that Scale",
+                  "Open Source",
+                ].map((tag) => (
+                  <span key={tag} className="tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Stats grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map(({ label, value, icon: Icon }, i) => (
+                <motion.div
+                  key={label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ delay: i * 0.1 + 0.3 }}
+                  className="card text-center group hover:border-primary-500/40 hover:-translate-y-1"
+                >
+                  <div className="inline-flex p-3 rounded-xl bg-primary-500/10 text-primary-400 mb-3 group-hover:bg-primary-500/20 transition-colors">
+                    <Icon size={24} />
+                  </div>
+                  <div className="text-3xl font-bold gradient-text mb-1">
+                    {value}
+                  </div>
+                  <div className="text-gray-400 text-sm">{label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
