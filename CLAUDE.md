@@ -115,10 +115,32 @@ Projects are fetched live from `https://api.github.com/users/Gaurang21/repos`.
 - Graceful error state if API is unavailable
 - No API key required (60 req/hour unauthenticated)
 
+## Design Variants
+
+4 parallel design branches exist for A/B comparison. Each is a full worktree with its own branch — run them side-by-side to compare:
+
+| Variant | Branch | Port | Description |
+|---|---|---|---|
+| Minimal & Elegant | `design/minimal-elegant` | 3001 | Typography-first, light/dark toggle, clean whitespace |
+| Bold & Vibrant | `design/bold-vibrant` | 3002 | Rich gradients, skill progress bars, glow effects |
+| Glassmorphism | `design/glassmorphism` | 3003 | Glass cards, neon accents, frosted navbar |
+| Timeline & Narrative | `design/timeline-narrative` | 3004 | Vertical timeline, project filters, reading progress bar |
+
+**Worktree paths** (sibling to `portfolio-2.0/`):
+- `portfolio-minimal-elegant/` → `npm run dev -- --port 3001`
+- `portfolio-bold-vibrant/` → `npm run dev -- --port 3002`
+- `portfolio-glassmorphism/` → `npm run dev -- --port 3003`
+- `portfolio-timeline-narrative/` → `npm run dev -- --port 3004`
+
+**Next steps**: cherry-pick favourite styles/features from each variant into `main`, then push. Vercel will auto-deploy from `main`.
+
 ## Deployment
-Optimized for Vercel deployment:
+Optimized for Vercel deployment. Production deploys automatically when changes are pushed/merged to `main` (configured via `vercel.json`).
+
 ```bash
-# Push to GitHub, then connect to Vercel
+# Push to GitHub (auto-deploys via Vercel)
+git push origin main
+
 # Or use Vercel CLI:
 vercel --prod
 ```
