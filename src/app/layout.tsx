@@ -13,6 +13,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gaurangsuki.dev"),
   title: "Gaurang Suki | Full Stack Software Engineer",
   description:
     "Full Stack Software Engineer based in Fremont, CA. Building scalable web applications at the intersection of beautiful UIs and robust backends.",
