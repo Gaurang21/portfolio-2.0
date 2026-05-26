@@ -4,26 +4,50 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { FileText, ExternalLink } from "lucide-react";
 
-// TODO: Replace placeholder papers with real publications
 const papers = [
   {
-    title: "Title TBD",
-    authors: "Gaurang Suki et al.",
-    venue: "Conference TBD",
-    year: "TBD",
-    abstract:
-      "Abstract placeholder — this is where a brief description of the research paper will go. Add 2-3 sentences describing the problem, approach, and key finding.",
-    pdfUrl: "#",
+    title: "Textual Content Moderation using Supervised Machine Learning Approach",
+    authors: "Revati Ganorkar, Gaurang Suki, Shubham Deshpande, Mayur Giri, Araddhana Deshmukh",
+    venue: "ICINC 2019 — International Conference on Internet of Things, Next Generation Network & Cloud Computing",
+    year: "2019",
+    abstract: "Proposed an efficient automated textual content moderation system to detect hate speech and offensive content on social networking sites using supervised machine learning. Addresses the limitations of manual moderation used by tech giants like Facebook and Microsoft, reducing harm to both users and content moderators.",
+    pdfUrl: "/research-papers/ICINC19.pdf",
     doiUrl: "#",
   },
   {
-    title: "Title TBD",
-    authors: "Gaurang Suki et al.",
-    venue: "Conference TBD",
-    year: "TBD",
-    abstract:
-      "Abstract placeholder — this is where a brief description of the research paper will go. Add 2-3 sentences describing the problem, approach, and key finding.",
-    pdfUrl: "#",
+    title: "DocBot: A Medical Consultant Chatbot using Deep Learning Approach",
+    authors: "Gaurang Suki, Mayur Giri, Revati Ganorkar, Shubham Deshpande, Araddhana Deshmukh",
+    venue: "Technical Journal of The Institution of Engineers (India), Vol. 42, Nov. 2018 — ISBN: 978-81-924990-6-2",
+    year: "2018",
+    abstract: "Proposed a robust 5-stage pipeline architecture for a medical consultancy chatbot using deep learning and seq2seq natural language processing. The model interacts with users in natural language, identifies symptoms, suggests probable diagnoses, and recommends relevant specialists — unlike existing platforms (e.g. WebMD) that limit free-form communication.",
+    pdfUrl: "/research-papers/DocBot.pdf",
+    doiUrl: "#",
+  },
+  {
+    title: "Proposed IoT Approach to Ameliorate Traffic Conditions",
+    authors: "Shubham Deshpande, Revati Ganorkar, Mayur Giri, Gaurang Suki, Araddhana Deshmukh",
+    venue: "IJIRCCE — International Journal of Innovative Research in Computer and Communication Engineering, Vol. 6, Issue 11, Nov. 2018",
+    year: "2018",
+    abstract: "Proposed a smart vehicular IoT system using MQTT (Message Queue Telemetry Transport) protocol to reduce road congestion and prevent accidents. The model uses advanced vehicle monitoring and sensor networks to keep drivers informed about traffic conditions and alert them to potential hazards in real time.",
+    pdfUrl: "/research-papers/IJIRCCE.pdf",
+    doiUrl: "http://www.ijircce.com/upload/2018/november/53_Proposed.pdf",
+  },
+  {
+    title: "Smart Implanted NFC-based System to Expedite Medical Treatment",
+    authors: "Shubham Deshpande, Gaurang Suki, Mayur Giri, Revati Ganorkar, Araddhana Deshmukh",
+    venue: "IJPAM — International Journal of Pure and Applied Mathematics, Vol. 118, No. 24, 2018 — ISSN: 1314-3395",
+    year: "2018",
+    abstract: "Proposed an NFC chip implant system for patients that stores prioritized medical data (name, blood group, history, allergies) on-chip with secondary data on the cloud. A doctor can scan the chip to instantly retrieve patient details during emergencies, significantly reducing time before treatment begins.",
+    pdfUrl: "/research-papers/IJPAM.pdf",
+    doiUrl: "https://acadpubl.eu/hub/2018-118-24/3/540.pdf",
+  },
+  {
+    title: "A Lucrative Model for Harnessing the Power of Social Media in Disaster Management",
+    authors: "Shubham Deshpande, Revati Ganorkar, Mayur Giri, Gaurang Suki, Araddhana Deshmukh",
+    venue: "ICCPS 2018 — RMK College of Engineering and Technology, Chennai (1st Prize)",
+    year: "2018",
+    abstract: "Proposed a platform that aggregates real-time information from YouTube, Twitter, and Facebook during disaster events, filters out misinformation and spam, and broadcasts SMS alerts to people in disaster-prone areas. Leverages social media's role as a dominant real-time communication channel to enhance disaster response.",
+    pdfUrl: "/research-papers/ICPS_2018_paper_6.pdf",
     doiUrl: "#",
   },
 ];
@@ -33,7 +57,7 @@ export default function ResearchPapers() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="research" className="py-24 bg-dark-800/50">
+    <section id="research" className="py-24" style={{ backgroundColor: 'var(--bg-card)' }}>
       <div className="section-container">
         <motion.div
           ref={ref}
@@ -42,8 +66,8 @@ export default function ResearchPapers() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="h-px w-12 bg-primary-500" />
-            <span className="text-primary-400 text-sm font-mono uppercase tracking-widest">
+            <div className="h-px w-12 theme-accent-line" />
+            <span className="theme-accent-text text-sm font-mono uppercase tracking-widest">
               Academic Work
             </span>
           </div>
@@ -61,38 +85,36 @@ export default function ResearchPapers() {
                 className="card hover:-translate-y-1"
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-accent-500/10 text-accent-400 shrink-0">
-                    <FileText size={22} />
-                  </div>
+                  <div className="theme-icon-badge-accent"><FileText size={22} /></div>
                   <div className="flex-1">
-                    <h3 className="text-white font-semibold text-lg mb-1">
-                      {paper.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm mb-1">{paper.authors}</p>
+                    <h3 className="theme-body-text font-semibold text-lg mb-1">{paper.title}</h3>
+                    <p className="theme-muted-text text-sm mb-1">{paper.authors}</p>
                     <div className="flex items-center gap-3 flex-wrap mb-3">
                       <span className="tag">{paper.venue}</span>
-                      <span className="text-gray-500 text-xs">{paper.year}</span>
+                      <span className="theme-muted-text text-xs">{paper.year}</span>
                     </div>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                      {paper.abstract}
-                    </p>
+                    <p className="theme-muted-text text-sm leading-relaxed mb-4">{paper.abstract}</p>
                     <div className="flex gap-3">
                       <a
                         href={paper.pdfUrl}
-                        className="inline-flex items-center gap-1.5 text-xs text-primary-400 hover:text-primary-300 transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs theme-accent-text transition-colors"
                         aria-label="View PDF"
                       >
-                        <ExternalLink size={12} />
-                        PDF
+                        <ExternalLink size={12} />PDF
                       </a>
-                      <a
-                        href={paper.doiUrl}
-                        className="inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-300 transition-colors"
-                        aria-label="View DOI"
-                      >
-                        <ExternalLink size={12} />
-                        DOI
-                      </a>
+                      {paper.doiUrl !== "#" && (
+                        <a
+                          href={paper.doiUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs theme-muted-text transition-colors"
+                          aria-label="View DOI"
+                        >
+                          <ExternalLink size={12} />DOI
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

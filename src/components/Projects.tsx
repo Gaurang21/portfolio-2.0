@@ -32,12 +32,12 @@ const languageColors: Record<string, string> = {
 function SkeletonCard() {
   return (
     <div className="card animate-pulse">
-      <div className="h-5 bg-dark-600 rounded w-3/4 mb-3" />
-      <div className="h-4 bg-dark-600 rounded w-full mb-2" />
-      <div className="h-4 bg-dark-600 rounded w-2/3 mb-4" />
+      <div className="h-5 rounded w-3/4 mb-3" style={{ backgroundColor: "var(--bg-card-hover)" }} />
+      <div className="h-4 rounded w-full mb-2" style={{ backgroundColor: "var(--bg-card-hover)" }} />
+      <div className="h-4 rounded w-2/3 mb-4" style={{ backgroundColor: "var(--bg-card-hover)" }} />
       <div className="flex gap-4">
-        <div className="h-3 bg-dark-600 rounded w-12" />
-        <div className="h-3 bg-dark-600 rounded w-12" />
+        <div className="h-3 rounded w-12" style={{ backgroundColor: "var(--bg-card-hover)" }} />
+        <div className="h-3 rounded w-12" style={{ backgroundColor: "var(--bg-card-hover)" }} />
       </div>
     </div>
   );
@@ -79,7 +79,11 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="py-24 bg-dark-800/50">
+    <section
+      id="projects"
+      className="py-24"
+      style={{ backgroundColor: "color-mix(in srgb, var(--bg-card) 50%, var(--bg))" }}
+    >
       <div className="section-container">
         <motion.div
           ref={ref}
@@ -88,8 +92,8 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="h-px w-12 bg-primary-500" />
-            <span className="text-primary-400 text-sm font-mono uppercase tracking-widest">
+            <div className="h-px w-12" style={{ backgroundColor: "var(--primary)" }} />
+            <span className="text-sm font-mono uppercase tracking-widest" style={{ color: "var(--primary)" }}>
               Open Source
             </span>
           </div>
@@ -109,7 +113,7 @@ export default function Projects() {
           </div>
 
           {error && (
-            <div className="text-center py-16 text-gray-500">
+            <div className="text-center py-16" style={{ color: "var(--text-muted)" }}>
               <FiGithub size={48} className="mx-auto mb-4 opacity-30" />
               <p>Unable to load repositories. Visit GitHub directly.</p>
               <a
@@ -141,20 +145,26 @@ export default function Projects() {
                     className="card group hover:-translate-y-2 flex flex-col cursor-pointer"
                   >
                     <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-white font-semibold group-hover:text-primary-300 transition-colors truncate pr-2">
+                      <h3
+                        className="font-semibold truncate pr-2 transition-colors"
+                        style={{ color: "var(--text)" }}
+                        onMouseEnter={e => (e.currentTarget.style.color = "var(--primary-light, var(--primary))")}
+                        onMouseLeave={e => (e.currentTarget.style.color = "var(--text)")}
+                      >
                         {repo.name}
                       </h3>
                       <ExternalLink
                         size={14}
-                        className="text-gray-600 group-hover:text-primary-400 transition-colors shrink-0 mt-1"
+                        className="shrink-0 mt-1 transition-colors group-hover:opacity-100"
+                        style={{ color: "var(--border)" }}
                       />
                     </div>
 
-                    <p className="text-gray-400 text-sm leading-relaxed flex-1 mb-4 line-clamp-2">
+                    <p className="text-sm leading-relaxed flex-1 mb-4 line-clamp-2" style={{ color: "var(--text-muted)" }}>
                       {repo.description || "No description available."}
                     </p>
 
-                    <div className="flex items-center gap-4 text-xs text-gray-500">
+                    <div className="flex items-center gap-4 text-xs" style={{ color: "var(--text-muted)" }}>
                       {repo.language && (
                         <div className="flex items-center gap-1">
                           <span

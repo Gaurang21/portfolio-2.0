@@ -32,11 +32,17 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      style={
         scrolled
-          ? "bg-dark-900/95 backdrop-blur-md border-b border-dark-700 shadow-lg"
-          : "bg-transparent"
-      }`}
+          ? {
+              backgroundColor: "color-mix(in srgb, var(--bg) 95%, transparent)",
+              backdropFilter: "blur(12px)",
+              borderBottom: "1px solid var(--border)",
+              boxShadow: "0 4px 24px rgba(0,0,0,0.3)",
+            }
+          : {}
+      }
     >
       <nav className="section-container flex items-center justify-between h-16">
         {/* Logo */}
@@ -45,10 +51,15 @@ export default function Navbar() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center gap-2 group"
         >
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform">
+          <div
+            className="w-9 h-9 rounded-lg flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform"
+            style={{
+              background: "linear-gradient(135deg, var(--primary), var(--accent))",
+            }}
+          >
             GS
           </div>
-          <span className="hidden sm:block text-white font-semibold text-sm tracking-wide">
+          <span className="hidden sm:block font-semibold text-sm tracking-wide" style={{ color: "var(--text)" }}>
             Gaurang Suki
           </span>
         </a>
@@ -59,7 +70,16 @@ export default function Navbar() {
             <button
               key={link.href}
               onClick={() => handleClick(link.href)}
-              className="px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-dark-700 rounded-lg transition-all duration-200"
+              className="px-3 py-2 text-sm rounded-lg transition-all duration-200"
+              style={{ color: "var(--text-muted)" }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLElement).style.color = "var(--text)";
+                (e.currentTarget as HTMLElement).style.backgroundColor = "var(--bg-card-hover)";
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLElement).style.color = "var(--text-muted)";
+                (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
+              }}
             >
               {link.label}
             </button>
@@ -75,9 +95,18 @@ export default function Navbar() {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden p-2 text-gray-400 hover:text-white hover:bg-dark-700 rounded-lg transition-all"
+          className="md:hidden p-2 rounded-lg transition-all"
+          style={{ color: "var(--text-muted)" }}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
+          onMouseEnter={e => {
+            (e.currentTarget as HTMLElement).style.color = "var(--text)";
+            (e.currentTarget as HTMLElement).style.backgroundColor = "var(--bg-card-hover)";
+          }}
+          onMouseLeave={e => {
+            (e.currentTarget as HTMLElement).style.color = "var(--text-muted)";
+            (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
+          }}
         >
           {isOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -90,14 +119,27 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden bg-dark-800/95 backdrop-blur-md border-b border-dark-700"
+            style={{
+              backgroundColor: "color-mix(in srgb, var(--bg-card) 95%, transparent)",
+              backdropFilter: "blur(12px)",
+              borderBottom: "1px solid var(--border)",
+            }}
           >
             <div className="section-container py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => handleClick(link.href)}
-                  className="text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-dark-700 rounded-lg transition-all text-sm"
+                  className="text-left px-4 py-3 rounded-lg transition-all text-sm"
+                  style={{ color: "var(--text-muted)" }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLElement).style.color = "var(--text)";
+                    (e.currentTarget as HTMLElement).style.backgroundColor = "var(--bg-card-hover)";
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLElement).style.color = "var(--text-muted)";
+                    (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
+                  }}
                 >
                   {link.label}
                 </button>

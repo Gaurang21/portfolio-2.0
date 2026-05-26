@@ -1,16 +1,58 @@
 [
   {
-    "name": "AWS Certified Developer – Associate",
-    "issuer": "Amazon Web Services",
-    "date": "TBD",
-    "credentialUrl": "#",
+    "name": "Claude Code: Software Engineering with Generative AI Agents",
+    "issuer": "Coursera / Vanderbilt University",
+    "date": "May 2026",
+    "credentialUrl": "https://coursera.org/verify/FL2HH8J0T23D",
     "badgeImage": null
   },
   {
-    "name": "Certification 2 (Coming Soon)",
-    "issuer": "TBD",
-    "date": "TBD",
-    "credentialUrl": "#",
+    "name": "AI Agents and Agentic AI Architecture in Python",
+    "issuer": "Coursera / Vanderbilt University",
+    "date": "Sep 2025",
+    "credentialUrl": "https://coursera.org/verify/7F10TQSI0WUY",
+    "badgeImage": null
+  },
+  {
+    "name": "AI Agents and Agentic AI with Python & Generative AI",
+    "issuer": "Coursera / Vanderbilt University",
+    "date": "Aug 2025",
+    "credentialUrl": "https://coursera.org/verify/WGSCD55I7I19",
+    "badgeImage": null
+  },
+  {
+    "name": "OpenAI GPTs: Creating Your Own Custom AI Assistants",
+    "issuer": "Coursera / Vanderbilt University",
+    "date": "May 2025",
+    "credentialUrl": "https://coursera.org/verify/UTT1VBQ819E0",
+    "badgeImage": null
+  },
+  {
+    "name": "Learning Amazon Web Services (AWS) for Developers",
+    "issuer": "LinkedIn Learning",
+    "date": "May 2021",
+    "credentialUrl": "https://www.linkedin.com/learning/certificates/cb38d2285b1bfe6eb0afe4c49db0dc88d3bd3b471c5342b644eff35401056a72?trk=backfilled_certificate&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BeP4RJOGvQkO2Xt%2Bi%2ByjHSw%3D%3D",
+    "badgeImage": null
+  },
+  {
+    "name": "Machine Learning with Python",
+    "issuer": "Coursera / IBM",
+    "date": "Nov 2019",
+    "credentialUrl": "/certifications/Machine Learning with Python.pdf",
+    "badgeImage": null
+  },
+  {
+    "name": "Python 101 for Data Science",
+    "issuer": "Coursera / IBM",
+    "date": "Oct 2019",
+    "credentialUrl": "/certifications/Python 101.pdf",
+    "badgeImage": null
+  },
+  {
+    "name": "Machine Learning A-Z",
+    "issuer": "Udemy",
+    "date": "Jul 2018",
+    "credentialUrl": "/certifications/Machine Learning A-Z.pdf",
     "badgeImage": null
   }
 ]

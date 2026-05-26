@@ -48,22 +48,31 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900" />
+      {/* Gradient background using theme variable */}
+      <div
+        className="absolute inset-0"
+        style={{ background: "var(--gradient-hero)" }}
+      />
 
       {/* Grid overlay */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, #0ea5e9 1px, transparent 1px), linear-gradient(to bottom, #0ea5e9 1px, transparent 1px)",
+            "linear-gradient(to right, var(--primary) 1px, transparent 1px), linear-gradient(to bottom, var(--primary) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
 
       {/* Glowing orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full filter blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-accent-500/10 rounded-full filter blur-3xl animate-pulse delay-1000" />
+      <div
+        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full filter blur-3xl animate-pulse"
+        style={{ backgroundColor: "color-mix(in srgb, var(--primary) 10%, transparent)" }}
+      />
+      <div
+        className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full filter blur-3xl animate-pulse delay-1000"
+        style={{ backgroundColor: "color-mix(in srgb, var(--accent) 10%, transparent)" }}
+      />
 
       <div className="relative section-container text-center z-10">
         <motion.div
@@ -72,30 +81,46 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-300 text-sm font-medium mb-8">
+          <div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8"
+            style={{
+              backgroundColor: "color-mix(in srgb, var(--primary) 10%, transparent)",
+              border: "1px solid color-mix(in srgb, var(--primary) 30%, transparent)",
+              color: "var(--primary-light, var(--primary))",
+            }}
+          >
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
             Available for opportunities
           </div>
 
           {/* Name */}
-          <h1 className="text-5xl sm:text-7xl font-bold text-white mb-4 tracking-tight">
+          <h1
+            className="text-5xl sm:text-7xl font-bold mb-4 tracking-tight"
+            style={{ color: "var(--text)" }}
+          >
             Gaurang{" "}
             <span className="gradient-text">Suki</span>
           </h1>
 
           {/* Typing title */}
           <div className="h-12 flex items-center justify-center mb-6">
-            <span className="text-xl sm:text-2xl font-mono text-primary-400">
+            <span
+              className="text-xl sm:text-2xl font-mono"
+              style={{ color: "var(--primary)" }}
+            >
               {displayed}
               <span className="animate-pulse">|</span>
             </span>
           </div>
 
           {/* Tagline */}
-          <p className="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p
+            className="text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+            style={{ color: "var(--text-muted)" }}
+          >
             Building scalable web applications at the intersection of{" "}
-            <span className="text-primary-300">beautiful UIs</span> and{" "}
-            <span className="text-accent-400">robust backends</span>.
+            <span style={{ color: "var(--primary-light, var(--primary))" }}>beautiful UIs</span> and{" "}
+            <span style={{ color: "var(--accent)" }}>robust backends</span>.
           </p>
 
           {/* CTAs */}
@@ -135,7 +160,16 @@ export default function Hero() {
                 target={label !== "Email" ? "_blank" : undefined}
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="p-3 text-gray-400 hover:text-primary-400 hover:bg-dark-700 rounded-xl transition-all duration-200 hover:scale-110"
+                className="p-3 rounded-xl transition-all duration-200 hover:scale-110"
+                style={{ color: "var(--text-muted)" }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.color = "var(--primary)";
+                  (e.currentTarget as HTMLElement).style.backgroundColor = "var(--bg-card-hover)";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.color = "var(--text-muted)";
+                  (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
+                }}
               >
                 <Icon size={22} />
               </a>
@@ -153,7 +187,8 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
-            className="flex flex-col items-center gap-2 text-gray-600"
+            className="flex flex-col items-center gap-2"
+            style={{ color: "var(--border)" }}
           >
             <span className="text-xs tracking-widest uppercase">Scroll</span>
             <ChevronDown size={16} />

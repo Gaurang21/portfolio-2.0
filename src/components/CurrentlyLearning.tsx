@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const learningItems = [
@@ -34,10 +34,10 @@ const learningItems = [
   },
 ];
 
-const statusColor: Record<string, string> = {
-  "In Progress": "bg-primary-500/20 text-primary-300 border-primary-500/30",
-  Active: "bg-green-500/20 text-green-300 border-green-500/30",
-  Starting: "bg-yellow-500/20 text-yellow-300 border-yellow-500/30",
+const statusStyle: Record<string, React.CSSProperties> = {
+  "In Progress": { backgroundColor: 'color-mix(in srgb, var(--primary) 20%, transparent)', color: 'var(--primary)', border: '1px solid color-mix(in srgb, var(--primary) 30%, transparent)' },
+  Active: { backgroundColor: 'rgba(34,197,94,0.2)', color: '#86efac', border: '1px solid rgba(34,197,94,0.3)' },
+  Starting: { backgroundColor: 'rgba(234,179,8,0.2)', color: '#fde047', border: '1px solid rgba(234,179,8,0.3)' },
 };
 
 export default function CurrentlyLearning() {
@@ -45,7 +45,7 @@ export default function CurrentlyLearning() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="learning" className="py-24 bg-dark-800/50">
+    <section id="learning" className="py-24" style={{ backgroundColor: 'var(--bg)' }}>
       <div className="section-container">
         <motion.div
           ref={ref}
@@ -54,15 +54,15 @@ export default function CurrentlyLearning() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="h-px w-12 bg-primary-500" />
-            <span className="text-primary-400 text-sm font-mono uppercase tracking-widest">
+            <div className="h-px w-12 theme-accent-line" />
+            <span className="theme-accent-text text-sm font-mono uppercase tracking-widest">
               Always Growing
             </span>
           </div>
           <h2 className="section-title mb-4">
             Currently <span className="gradient-text">Learning</span>
           </h2>
-          <p className="text-gray-400 mb-12 max-w-xl">
+          <p className="theme-muted-text mb-12 max-w-xl">
             The best engineers never stop learning. Here&apos;s what&apos;s on
             my radar right now.
           </p>
@@ -80,31 +80,27 @@ export default function CurrentlyLearning() {
                   <span className="text-2xl">{item.icon}</span>
                   <div className="flex-1">
                     <div className="flex items-center justify-between gap-2 flex-wrap">
-                      <h3 className="text-white font-semibold text-sm">
-                        {item.name}
-                      </h3>
-                      <span
-                        className={`text-xs px-2 py-0.5 rounded-full border ${statusColor[item.status]}`}
-                      >
+                      <h3 className="theme-body-text font-semibold text-sm">{item.name}</h3>
+                      <span className="text-xs px-2 py-0.5 rounded-full" style={statusStyle[item.status]}>
                         {item.status}
                       </span>
                     </div>
                   </div>
                 </div>
 
-                <p className="text-gray-400 text-sm mb-4">{item.description}</p>
+                <p className="theme-muted-text text-sm mb-4">{item.description}</p>
 
                 <div>
-                  <div className="flex justify-between text-xs text-gray-500 mb-1.5">
+                  <div className="flex justify-between text-xs theme-muted-text mb-1.5">
                     <span>Progress</span>
                     <span>{item.progress}%</span>
                   </div>
-                  <div className="h-1.5 bg-dark-700 rounded-full overflow-hidden">
+                  <div className="h-1.5 rounded-full overflow-hidden theme-track">
                     <motion.div
                       initial={{ width: 0 }}
                       animate={isInView ? { width: `${item.progress}%` } : {}}
                       transition={{ delay: i * 0.1 + 0.5, duration: 1 }}
-                      className="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full"
+                      className="h-full theme-track-fill rounded-full"
                     />
                   </div>
                 </div>
