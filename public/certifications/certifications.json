@@ -28,6 +28,27 @@
     "badgeImage": null
   },
   {
+    "name": "Machine Learning A-Z",
+    "issuer": "Udemy",
+    "date": "2023",
+    "credentialUrl": "/certifications/Machine Learning A-Z.pdf",
+    "badgeImage": null
+  },
+  {
+    "name": "Machine Learning with Python",
+    "issuer": "Coursera / IBM",
+    "date": "2023",
+    "credentialUrl": "/certifications/Machine Learning with Python.pdf",
+    "badgeImage": null
+  },
+  {
+    "name": "Python 101",
+    "issuer": "Coursera / IBM",
+    "date": "2023",
+    "credentialUrl": "/certifications/Python 101.pdf",
+    "badgeImage": null
+  },
+  {
     "name": "AWS Certified Developer – Associate",
     "issuer": "Amazon Web Services",
     "date": "In Progress",

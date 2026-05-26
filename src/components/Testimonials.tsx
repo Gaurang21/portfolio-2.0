@@ -5,34 +5,33 @@ import { motion, useInView } from "framer-motion";
 import { Quote } from "lucide-react";
 import { FiLinkedin } from "react-icons/fi";
 
-// TODO: Replace with real LinkedIn recommendations
 const testimonials = [
   {
     quote:
-      "Placeholder — paste your LinkedIn recommendation here. This is where a genuine endorsement from a colleague, manager, or peer will appear.",
-    name: "Colleague Name",
-    title: "Engineering Manager",
-    company: "Company Name",
-    linkedinUrl: "#",
-    initials: "CN",
+      "I have had the pleasure of managing Gaurang at Cisco Spaces for 3 years, and I am consistently impressed by their abilities. Gaurang is a quick learner who grasps new concepts rapidly, making him an invaluable asset to our team and a great help to me personally. He excels under pressure, maintaining focus and delivering high-quality work even in challenging situations. Gaurang is not afraid to take on new tasks and consistently steps out of their comfort zone to tackle new challenges. Their proactive attitude and dedication have significantly contributed to our team's success. I highly recommend Gaurang for any role he chooses to pursue.",
+    name: "Balu Loganathan",
+    title: "Software Engineering Manager",
+    company: "Cisco | Stanford, Certified Design Thinking",
+    linkedinUrl: "https://www.linkedin.com/in/gaurang-suki",
+    initials: "BL",
   },
   {
     quote:
-      "Placeholder — a second LinkedIn recommendation highlighting specific technical skills, teamwork, or impact you made on a project or team.",
-    name: "Colleague Name",
-    title: "Senior Software Engineer",
-    company: "Company Name",
-    linkedinUrl: "#",
-    initials: "CN",
+      "Gaurang and I worked closely on all (10+) applications in the Cisco Spaces suite. It was a pleasure whenever I was fortunate enough to work with Gaurang and I can say with confidence his growth from April 2023 – October 2024 has been exponential. Today, Gaurang is someone who will never say no to lending a hand, takes ownership of his deliverables from start to finish, and someone you can rely on (give and forget any quantity/complexity of work). His humble and calm demeanor make him a delight to work with. He would be an invaluable asset on any team.",
+    name: "Sarneet Longia",
+    title: "Tech Lead",
+    company: "Cisco",
+    linkedinUrl: "https://www.linkedin.com/in/gaurang-suki",
+    initials: "SL",
   },
   {
     quote:
-      "Placeholder — a third recommendation from someone who worked closely with you and can speak to your problem-solving abilities and work ethic.",
-    name: "Colleague Name",
-    title: "Product Manager",
-    company: "Company Name",
-    linkedinUrl: "#",
-    initials: "CN",
+      "Gaurang is a fantastic team player who makes collaboration seamless. He grasps project requirements quickly and is always willing to assist others. His ability to tackle complex issues and deliver solutions swiftly is truly commendable. Additionally, his strong communication skills and attention to detail ensure that projects run smoothly and efficiently.",
+    name: "Veena Balasubramanya",
+    title: "Frontend Engineer",
+    company: "React.js · Redux · ES6 · JavaScript",
+    linkedinUrl: "https://www.linkedin.com/in/gaurang-suki",
+    initials: "VB",
   },
 ];
 
