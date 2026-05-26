@@ -11,6 +11,11 @@ npm run build   # must show "✓ Compiled successfully" with no TypeScript error
 
 If the build fails, fix all errors silently before surfacing the result. The user should only ever see a working page.
 
+**⚠️ Never run `npm run build` while `npm run dev` is running on the same project.** The build overwrites `.next/` chunk hashes and causes the dev server to serve 404s for all JS/CSS assets. If you need to verify a build:
+1. Stop the dev server first
+2. Run `npm run build`
+3. Clear `.next/` and restart `npm run dev` afterwards
+
 ### Guard against stale localStorage / undefined state
 When removing or renaming features (theme IDs, config keys, etc.) that are persisted to `localStorage`, always add a validation + fallback so stale values don't crash the app at runtime. Pattern:
 ```ts
