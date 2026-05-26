@@ -29,7 +29,7 @@ export default function Contact() {
     setStatus("loading");
     try {
       // TODO: Replace with your Formspree endpoint: https://formspree.io/f/YOUR_FORM_ID
-      const res = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const res = await fetch("https://formspree.io/f/xbdbzqva", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(form),
