@@ -1,5 +1,23 @@
 # Portfolio 2.0 — CLAUDE.md Maintenance Guide
 
+## ⚠️ Development Rules
+
+### Always build before asking the user to verify
+After making any code changes, **always run `npm run build` and confirm it passes before telling the user to check the browser.** Do not ask the user to open localhost until the build succeeds with zero errors.
+
+```bash
+npm run build   # must show "✓ Compiled successfully" with no TypeScript errors
+```
+
+If the build fails, fix all errors silently before surfacing the result. The user should only ever see a working page.
+
+### Guard against stale localStorage / undefined state
+When removing or renaming features (theme IDs, config keys, etc.) that are persisted to `localStorage`, always add a validation + fallback so stale values don't crash the app at runtime. Pattern:
+```ts
+const saved = localStorage.getItem('key') || 'default';
+const valid = VALID_VALUES.includes(saved) ? saved : 'default';
+```
+
 ## Project Overview
 Production-grade Next.js 14 portfolio for Gaurang Suki. Single-page application with 16 sections, dark theme, Framer Motion animations, and live GitHub API integration.
 
