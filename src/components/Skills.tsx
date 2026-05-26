@@ -64,9 +64,10 @@ const skillCategories = [
   },
 ];
 
+// For non-primary/accent colors, we keep fixed Tailwind colors; for primary/accent we use CSS vars
 const colorMap: Record<string, string> = {
-  primary: "bg-primary-500/10 text-primary-300 border-primary-500/20 hover:bg-primary-500/20",
-  accent: "bg-accent-500/10 text-accent-300 border-accent-500/20 hover:bg-accent-500/20",
+  primary: "",  // handled inline
+  accent: "",   // handled inline
   green: "bg-green-500/10 text-green-300 border-green-500/20 hover:bg-green-500/20",
   orange: "bg-orange-500/10 text-orange-300 border-orange-500/20 hover:bg-orange-500/20",
   pink: "bg-pink-500/10 text-pink-300 border-pink-500/20 hover:bg-pink-500/20",
@@ -75,8 +76,6 @@ const colorMap: Record<string, string> = {
 };
 
 const headerColorMap: Record<string, string> = {
-  primary: "text-primary-400",
-  accent: "text-accent-400",
   green: "text-green-400",
   orange: "text-orange-400",
   pink: "text-pink-400",
@@ -89,7 +88,7 @@ export default function Skills() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="py-24 bg-dark-900">
+    <section id="skills" className="py-24" style={{ backgroundColor: "var(--bg)" }}>
       <div className="section-container">
         <motion.div
           ref={ref}
@@ -98,8 +97,8 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="h-px w-12 bg-primary-500" />
-            <span className="text-primary-400 text-sm font-mono uppercase tracking-widest">
+            <div className="h-px w-12" style={{ backgroundColor: "var(--primary)" }} />
+            <span className="text-sm font-mono uppercase tracking-widest" style={{ color: "var(--primary)" }}>
               Tech Stack
             </span>
           </div>
@@ -119,7 +118,18 @@ export default function Skills() {
                 <div className="flex items-center gap-2 mb-4">
                   <span className="text-2xl">{cat.icon}</span>
                   <h3
-                    className={`font-bold text-base ${headerColorMap[cat.color]}`}
+                    className={`font-bold text-base ${
+                      cat.color === "primary" || cat.color === "accent"
+                        ? ""
+                        : headerColorMap[cat.color]
+                    }`}
+                    style={
+                      cat.color === "primary"
+                        ? { color: "var(--primary)" }
+                        : cat.color === "accent"
+                        ? { color: "var(--accent)" }
+                        : {}
+                    }
                   >
                     {cat.name}
                   </h3>
@@ -128,7 +138,26 @@ export default function Skills() {
                   {cat.skills.map((skill) => (
                     <span
                       key={skill}
-                      className={`text-xs font-medium px-2.5 py-1 rounded-full border transition-colors cursor-default ${colorMap[cat.color]}`}
+                      className={`text-xs font-medium px-2.5 py-1 rounded-full border transition-colors cursor-default ${
+                        cat.color === "primary" || cat.color === "accent"
+                          ? ""
+                          : colorMap[cat.color]
+                      }`}
+                      style={
+                        cat.color === "primary"
+                          ? {
+                              backgroundColor: "color-mix(in srgb, var(--primary) 10%, transparent)",
+                              color: "var(--primary-light, var(--primary))",
+                              borderColor: "color-mix(in srgb, var(--primary) 20%, transparent)",
+                            }
+                          : cat.color === "accent"
+                          ? {
+                              backgroundColor: "color-mix(in srgb, var(--accent) 10%, transparent)",
+                              color: "var(--accent)",
+                              borderColor: "color-mix(in srgb, var(--accent) 20%, transparent)",
+                            }
+                          : {}
+                      }
                     >
                       {skill}
                     </span>

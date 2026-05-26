@@ -17,7 +17,11 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-24 bg-dark-800/50">
+    <section
+      id="about"
+      className="py-24"
+      style={{ backgroundColor: "color-mix(in srgb, var(--bg-card) 50%, var(--bg))" }}
+    >
       <div className="section-container">
         <motion.div
           ref={ref}
@@ -26,8 +30,11 @@ export default function About() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="h-px w-12 bg-primary-500" />
-            <span className="text-primary-400 text-sm font-mono uppercase tracking-widest">
+            <div className="h-px w-12" style={{ backgroundColor: "var(--primary)" }} />
+            <span
+              className="text-sm font-mono uppercase tracking-widest"
+              style={{ color: "var(--primary)" }}
+            >
               About Me
             </span>
           </div>
@@ -38,39 +45,39 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Bio */}
             <div className="space-y-6">
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed" style={{ color: "var(--text-muted)" }}>
                 I&apos;m a Full Stack Software Engineer currently working at{" "}
-                <span className="text-primary-300 font-semibold">
+                <span style={{ color: "var(--primary-light, var(--primary))", fontWeight: 600 }}>
                   Cisco Systems
                 </span>{" "}
                 in San Jose, CA — building enterprise IoT web applications that
                 scale.
               </p>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
                 With a full stack background spanning{" "}
-                <span className="text-gray-200">IoT</span>,{" "}
-                <span className="text-gray-200">SaaS</span>,{" "}
-                <span className="text-gray-200">telecom</span>, and{" "}
-                <span className="text-gray-200">healthcare</span> verticals, I
+                <span style={{ color: "var(--text)" }}>IoT</span>,{" "}
+                <span style={{ color: "var(--text)" }}>SaaS</span>,{" "}
+                <span style={{ color: "var(--text)" }}>telecom</span>, and{" "}
+                <span style={{ color: "var(--text)" }}>healthcare</span> verticals, I
                 thrive at the intersection of clean code and great user
                 experience. I&apos;m passionate about systems that scale and
                 UIs that delight.
               </p>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
                 I hold an{" "}
-                <span className="text-gray-200">
+                <span style={{ color: "var(--text)" }}>
                   MS in Computer Science from Cal State East Bay
                 </span>{" "}
                 and a{" "}
-                <span className="text-gray-200">
+                <span style={{ color: "var(--text)" }}>
                   BE in Computer Engineering from Savitribai Phule Pune
                   University
                 </span>
                 .
               </p>
 
-              <div className="flex items-center gap-2 text-gray-400">
-                <MapPin size={16} className="text-primary-400" />
+              <div className="flex items-center gap-2" style={{ color: "var(--text-muted)" }}>
+                <MapPin size={16} style={{ color: "var(--primary)" }} />
                 <span>Fremont, CA</span>
               </div>
 
@@ -96,15 +103,21 @@ export default function About() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ delay: i * 0.1 + 0.3 }}
-                  className="card text-center group hover:border-primary-500/40 hover:-translate-y-1"
+                  className="card text-center group hover:-translate-y-1"
                 >
-                  <div className="inline-flex p-3 rounded-xl bg-primary-500/10 text-primary-400 mb-3 group-hover:bg-primary-500/20 transition-colors">
+                  <div
+                    className="inline-flex p-3 rounded-xl mb-3 transition-colors"
+                    style={{
+                      backgroundColor: "color-mix(in srgb, var(--primary) 10%, transparent)",
+                      color: "var(--primary)",
+                    }}
+                  >
                     <Icon size={24} />
                   </div>
                   <div className="text-3xl font-bold gradient-text mb-1">
                     {value}
                   </div>
-                  <div className="text-gray-400 text-sm">{label}</div>
+                  <div className="text-sm" style={{ color: "var(--text-muted)" }}>{label}</div>
                 </motion.div>
               ))}
             </div>

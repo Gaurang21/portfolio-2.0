@@ -1,15 +1,36 @@
 [
   {
-    "name": "AWS Certified Developer – Associate",
-    "issuer": "Amazon Web Services",
-    "date": "TBD",
-    "credentialUrl": "#",
+    "name": "Agentic AI with Python",
+    "issuer": "Coursera",
+    "date": "2024",
+    "credentialUrl": "/certifications/Coursera Agentic AI with Python Certificate.pdf",
     "badgeImage": null
   },
   {
-    "name": "Certification 2 (Coming Soon)",
-    "issuer": "TBD",
-    "date": "TBD",
+    "name": "Agentic AI Architecture",
+    "issuer": "Coursera",
+    "date": "2024",
+    "credentialUrl": "/certifications/Coursera Agentic AI Architecture Certificate.pdf",
+    "badgeImage": null
+  },
+  {
+    "name": "Custom GPT Development",
+    "issuer": "Coursera",
+    "date": "2024",
+    "credentialUrl": "/certifications/Coursera Custom GPT cert.pdf",
+    "badgeImage": null
+  },
+  {
+    "name": "AI/ML Specialization",
+    "issuer": "Coursera",
+    "date": "2024",
+    "credentialUrl": "/certifications/Coursera FL2HH8J0T23D.pdf",
+    "badgeImage": null
+  },
+  {
+    "name": "AWS Certified Developer – Associate",
+    "issuer": "Amazon Web Services",
+    "date": "In Progress",
     "credentialUrl": "#",
     "badgeImage": null
   }

@@ -10,14 +10,14 @@ import Certifications from "@/components/Certifications";
 import ResearchPapers from "@/components/ResearchPapers";
 import Education from "@/components/Education";
 import Testimonials from "@/components/Testimonials";
-import DevSetup from "@/components/DevSetup";
 import Hobbies from "@/components/Hobbies";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-dark-900">
+    <main className="min-h-screen" style={{ backgroundColor: "var(--bg)" }}>
       <Navbar />
       <Hero />
       <About />
@@ -30,10 +30,10 @@ export default function Home() {
       <ResearchPapers />
       <Education />
       <Testimonials />
-      <DevSetup />
       <Hobbies />
       <Contact />
       <Footer />
+      <ThemeSwitcher />
     </main>
   );
 }

@@ -41,7 +41,7 @@ export default function Testimonials() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="testimonials" className="py-24 bg-dark-800/50">
+    <section id="testimonials" className="py-24" style={{ backgroundColor: 'var(--bg)' }}>
       <div className="section-container">
         <motion.div
           ref={ref}
@@ -50,8 +50,8 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="h-px w-12 bg-primary-500" />
-            <span className="text-primary-400 text-sm font-mono uppercase tracking-widest">
+            <div className="h-px w-12 theme-accent-line" />
+            <span className="theme-accent-text text-sm font-mono uppercase tracking-widest">
               What Others Say
             </span>
           </div>
@@ -68,32 +68,19 @@ export default function Testimonials() {
                 transition={{ delay: i * 0.1 + 0.2 }}
                 className="card flex flex-col hover:-translate-y-1 relative"
               >
-                <Quote
-                  size={32}
-                  className="text-primary-500/20 mb-4 shrink-0"
-                />
-                <p className="text-gray-300 leading-relaxed italic flex-1 mb-6 text-sm">
+                <Quote size={32} className="mb-4 shrink-0" style={{ color: 'color-mix(in srgb, var(--primary) 25%, transparent)' }} />
+                <p className="theme-muted-text leading-relaxed italic flex-1 mb-6 text-sm">
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white text-xs font-bold">
-                      {t.initials}
-                    </div>
+                    <div className="w-10 h-10 theme-avatar text-xs" style={{ minWidth: '2.5rem' }}>{t.initials}</div>
                     <div>
-                      <p className="text-white font-semibold text-sm">{t.name}</p>
-                      <p className="text-gray-500 text-xs">
-                        {t.title} · {t.company}
-                      </p>
+                      <p className="theme-body-text font-semibold text-sm">{t.name}</p>
+                      <p className="theme-muted-text text-xs">{t.title} · {t.company}</p>
                     </div>
                   </div>
-                  <a
-                    href={t.linkedinUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-primary-400 transition-colors"
-                    aria-label="LinkedIn profile"
-                  >
+                  <a href={t.linkedinUrl} target="_blank" rel="noopener noreferrer" className="theme-muted-text theme-accent-text transition-colors" aria-label="LinkedIn profile">
                     <FiLinkedin size={18} />
                   </a>
                 </div>

@@ -48,7 +48,7 @@ export default function DevSetup() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="setup" className="py-24 bg-dark-900">
+    <section id="setup" className="py-24" style={{ backgroundColor: 'var(--bg-card)' }}>
       <div className="section-container">
         <motion.div
           ref={ref}
@@ -57,15 +57,15 @@ export default function DevSetup() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="h-px w-12 bg-primary-500" />
-            <span className="text-primary-400 text-sm font-mono uppercase tracking-widest">
+            <div className="h-px w-12 theme-accent-line" />
+            <span className="theme-accent-text text-sm font-mono uppercase tracking-widest">
               My Setup
             </span>
           </div>
           <h2 className="section-title mb-4">
             Dev <span className="gradient-text">Setup</span>
           </h2>
-          <p className="text-gray-400 mb-12 max-w-xl">
+          <p className="theme-muted-text mb-12 max-w-xl">
             The tools and gear I rely on daily to write better code, faster.
           </p>
 
@@ -80,13 +80,9 @@ export default function DevSetup() {
               >
                 <span className="text-2xl shrink-0">{item.icon}</span>
                 <div>
-                  <p className="text-gray-500 text-xs uppercase tracking-widest mb-0.5">
-                    {item.category}
-                  </p>
-                  <p className="text-white font-semibold group-hover:text-primary-300 transition-colors">
-                    {item.value}
-                  </p>
-                  <p className="text-gray-400 text-xs mt-0.5">{item.detail}</p>
+                  <p className="theme-muted-text text-xs uppercase tracking-widest mb-0.5">{item.category}</p>
+                  <p className="theme-body-text font-semibold transition-colors">{item.value}</p>
+                  <p className="theme-muted-text text-xs mt-0.5">{item.detail}</p>
                 </div>
               </motion.div>
             ))}

@@ -19,7 +19,7 @@ export default function Certifications() {
   const certs: Certification[] = certificationsData;
 
   return (
-    <section id="certifications" className="py-24 bg-dark-900">
+    <section id="certifications" className="py-24" style={{ backgroundColor: 'var(--bg)' }}>
       <div className="section-container">
         <motion.div
           ref={ref}
@@ -28,8 +28,8 @@ export default function Certifications() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="h-px w-12 bg-primary-500" />
-            <span className="text-primary-400 text-sm font-mono uppercase tracking-widest">
+            <div className="h-px w-12 theme-accent-line" />
+            <span className="theme-accent-text text-sm font-mono uppercase tracking-widest">
               Credentials
             </span>
           </div>
@@ -51,31 +51,22 @@ export default function Certifications() {
                     className="card flex flex-col gap-4 opacity-60 cursor-default"
                   >
                     <div className="flex items-center justify-between">
-                      <div className="p-3 rounded-xl bg-primary-500/10 text-primary-400">
-                        <Award size={24} />
-                      </div>
-                      <span className="text-xs px-2 py-1 rounded-full bg-dark-700 text-gray-500 border border-dark-600">
+                      <div className="theme-icon-badge"><Award size={24} /></div>
+                      <span className="text-xs px-2 py-1 rounded-full theme-muted-text" style={{ backgroundColor: 'var(--bg-card-hover)', border: '1px solid var(--border)' }}>
                         Coming Soon
                       </span>
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold mb-1">
-                        {cert.name}
-                      </h3>
-                      <p className="text-primary-400 text-sm">{cert.issuer}</p>
-                      <p className="text-gray-500 text-xs mt-1">{cert.date}</p>
+                      <h3 className="theme-body-text font-semibold mb-1">{cert.name}</h3>
+                      <p className="theme-accent-text text-sm">{cert.issuer}</p>
+                      <p className="theme-muted-text text-xs mt-1">{cert.date}</p>
                     </div>
                   </motion.div>
                 );
               }
 
               return (
-                <a
-                  key={cert.name}
-                  href={cert.credentialUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a key={cert.name} href={cert.credentialUrl} target="_blank" rel="noopener noreferrer">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -83,20 +74,13 @@ export default function Certifications() {
                     className="card flex flex-col gap-4 hover:-translate-y-2 cursor-pointer group"
                   >
                     <div className="flex items-center justify-between">
-                      <div className="p-3 rounded-xl bg-primary-500/10 text-primary-400">
-                        <Award size={24} />
-                      </div>
-                      <ExternalLink
-                        size={16}
-                        className="text-gray-600 group-hover:text-primary-400 transition-colors"
-                      />
+                      <div className="theme-icon-badge"><Award size={24} /></div>
+                      <ExternalLink size={16} className="theme-muted-text group-hover:theme-accent-text transition-colors" />
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold mb-1 group-hover:text-primary-300 transition-colors">
-                        {cert.name}
-                      </h3>
-                      <p className="text-primary-400 text-sm">{cert.issuer}</p>
-                      <p className="text-gray-500 text-xs mt-1">{cert.date}</p>
+                      <h3 className="theme-body-text font-semibold mb-1">{cert.name}</h3>
+                      <p className="theme-accent-text text-sm">{cert.issuer}</p>
+                      <p className="theme-muted-text text-xs mt-1">{cert.date}</p>
                     </div>
                   </motion.div>
                 </a>

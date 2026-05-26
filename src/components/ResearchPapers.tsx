@@ -4,26 +4,50 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { FileText, ExternalLink } from "lucide-react";
 
-// TODO: Replace placeholder papers with real publications
 const papers = [
   {
-    title: "Title TBD",
+    title: "International Conference on Intelligent Networks and Computing (ICINC 2019)",
     authors: "Gaurang Suki et al.",
-    venue: "Conference TBD",
-    year: "TBD",
-    abstract:
-      "Abstract placeholder — this is where a brief description of the research paper will go. Add 2-3 sentences describing the problem, approach, and key finding.",
-    pdfUrl: "#",
+    venue: "ICINC 2019",
+    year: "2019",
+    abstract: "Research paper presented at the International Conference on Intelligent Networks and Computing 2019. Click to view full paper.",
+    pdfUrl: "/research-papers/ICINC19.pdf",
     doiUrl: "#",
   },
   {
-    title: "Title TBD",
+    title: "International Journal of Innovative Research in Computer and Communication Engineering",
     authors: "Gaurang Suki et al.",
-    venue: "Conference TBD",
-    year: "TBD",
-    abstract:
-      "Abstract placeholder — this is where a brief description of the research paper will go. Add 2-3 sentences describing the problem, approach, and key finding.",
-    pdfUrl: "#",
+    venue: "IJIRCCE",
+    year: "2020",
+    abstract: "Published research in the International Journal of Innovative Research in Computer and Communication Engineering. Click to view full paper.",
+    pdfUrl: "/research-papers/IJIRCCE.pdf",
+    doiUrl: "#",
+  },
+  {
+    title: "International Journal of Pure and Applied Mathematics",
+    authors: "Gaurang Suki et al.",
+    venue: "IJPAM",
+    year: "2019",
+    abstract: "Research contribution to the International Journal of Pure and Applied Mathematics. Click to view full paper.",
+    pdfUrl: "/research-papers/IJPAM.pdf",
+    doiUrl: "#",
+  },
+  {
+    title: "DocBot: Document Intelligence System",
+    authors: "Gaurang Suki et al.",
+    venue: "Research Paper",
+    year: "2021",
+    abstract: "DocBot is an intelligent document processing system. Click to view full paper.",
+    pdfUrl: "/research-papers/DocBot.pdf",
+    doiUrl: "#",
+  },
+  {
+    title: "International Conference on Power Systems (ICPS 2018)",
+    authors: "Gaurang Suki et al.",
+    venue: "ICPS 2018",
+    year: "2018",
+    abstract: "Research paper presented at the International Conference on Power Systems 2018. Click to view full paper.",
+    pdfUrl: "/research-papers/ICPS_2018_paper_6.pdf",
     doiUrl: "#",
   },
 ];
@@ -33,7 +57,7 @@ export default function ResearchPapers() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="research" className="py-24 bg-dark-800/50">
+    <section id="research" className="py-24" style={{ backgroundColor: 'var(--bg-card)' }}>
       <div className="section-container">
         <motion.div
           ref={ref}
@@ -42,8 +66,8 @@ export default function ResearchPapers() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="h-px w-12 bg-primary-500" />
-            <span className="text-primary-400 text-sm font-mono uppercase tracking-widest">
+            <div className="h-px w-12 theme-accent-line" />
+            <span className="theme-accent-text text-sm font-mono uppercase tracking-widest">
               Academic Work
             </span>
           </div>
@@ -61,38 +85,36 @@ export default function ResearchPapers() {
                 className="card hover:-translate-y-1"
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-accent-500/10 text-accent-400 shrink-0">
-                    <FileText size={22} />
-                  </div>
+                  <div className="theme-icon-badge-accent"><FileText size={22} /></div>
                   <div className="flex-1">
-                    <h3 className="text-white font-semibold text-lg mb-1">
-                      {paper.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm mb-1">{paper.authors}</p>
+                    <h3 className="theme-body-text font-semibold text-lg mb-1">{paper.title}</h3>
+                    <p className="theme-muted-text text-sm mb-1">{paper.authors}</p>
                     <div className="flex items-center gap-3 flex-wrap mb-3">
                       <span className="tag">{paper.venue}</span>
-                      <span className="text-gray-500 text-xs">{paper.year}</span>
+                      <span className="theme-muted-text text-xs">{paper.year}</span>
                     </div>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                      {paper.abstract}
-                    </p>
+                    <p className="theme-muted-text text-sm leading-relaxed mb-4">{paper.abstract}</p>
                     <div className="flex gap-3">
                       <a
                         href={paper.pdfUrl}
-                        className="inline-flex items-center gap-1.5 text-xs text-primary-400 hover:text-primary-300 transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs theme-accent-text transition-colors"
                         aria-label="View PDF"
                       >
-                        <ExternalLink size={12} />
-                        PDF
+                        <ExternalLink size={12} />PDF
                       </a>
-                      <a
-                        href={paper.doiUrl}
-                        className="inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-300 transition-colors"
-                        aria-label="View DOI"
-                      >
-                        <ExternalLink size={12} />
-                        DOI
-                      </a>
+                      {paper.doiUrl !== "#" && (
+                        <a
+                          href={paper.doiUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs theme-muted-text transition-colors"
+                          aria-label="View DOI"
+                        >
+                          <ExternalLink size={12} />DOI
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

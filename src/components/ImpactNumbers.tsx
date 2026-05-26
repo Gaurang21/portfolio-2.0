@@ -19,6 +19,7 @@ const metrics = [
     label: "Manual Work Reduced",
     description: "Time saved via Python automation pipelines",
     color: "from-primary-400 to-primary-600",
+    useTheme: true,
   },
   {
     value: 10,
@@ -27,6 +28,7 @@ const metrics = [
     label: "Staff Time Freed",
     description: "Allocation time reduced via AWS SES automation",
     color: "from-accent-400 to-accent-600",
+    useAccent: true,
   },
   {
     value: 5,
@@ -99,11 +101,17 @@ export default function ImpactNumbers() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="impact" className="py-24 bg-dark-900 relative overflow-hidden">
+    <section id="impact" className="py-24 relative overflow-hidden" style={{ backgroundColor: "var(--bg)" }}>
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-500 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-500 to-transparent" />
+        <div
+          className="absolute top-0 left-0 w-full h-px"
+          style={{ background: "linear-gradient(to right, transparent, var(--primary), transparent)" }}
+        />
+        <div
+          className="absolute bottom-0 left-0 w-full h-px"
+          style={{ background: "linear-gradient(to right, transparent, var(--primary), transparent)" }}
+        />
       </div>
 
       <div className="section-container">
@@ -115,17 +123,17 @@ export default function ImpactNumbers() {
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center gap-3 mb-3">
-            <div className="h-px w-12 bg-primary-500" />
-            <span className="text-primary-400 text-sm font-mono uppercase tracking-widest">
+            <div className="h-px w-12" style={{ backgroundColor: "var(--primary)" }} />
+            <span className="text-sm font-mono uppercase tracking-widest" style={{ color: "var(--primary)" }}>
               Real Impact
             </span>
-            <div className="h-px w-12 bg-primary-500" />
+            <div className="h-px w-12" style={{ backgroundColor: "var(--primary)" }} />
           </div>
-          <h2 className="text-4xl sm:text-6xl font-bold text-white">
+          <h2 className="text-4xl sm:text-6xl font-bold" style={{ color: "var(--text)" }}>
             Impact by{" "}
             <span className="gradient-text">Numbers</span>
           </h2>
-          <p className="text-gray-400 mt-4 text-lg max-w-2xl mx-auto">
+          <p className="mt-4 text-lg max-w-2xl mx-auto" style={{ color: "var(--text-muted)" }}>
             Measurable outcomes from real production work — not just features shipped
           </p>
         </motion.div>
@@ -148,10 +156,10 @@ export default function ImpactNumbers() {
                   suffix={metric.suffix}
                 />
               </div>
-              <div className="text-white font-bold text-lg mb-2">
+              <div className="font-bold text-lg mb-2" style={{ color: "var(--text)" }}>
                 {metric.label}
               </div>
-              <div className="text-gray-400 text-sm leading-relaxed">
+              <div className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
                 {metric.description}
               </div>
             </motion.div>

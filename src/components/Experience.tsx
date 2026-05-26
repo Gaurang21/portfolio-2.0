@@ -77,7 +77,11 @@ export default function Experience() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="experience" className="py-24 bg-dark-800/50">
+    <section
+      id="experience"
+      className="py-24"
+      style={{ backgroundColor: "color-mix(in srgb, var(--bg-card) 50%, var(--bg))" }}
+    >
       <div className="section-container">
         <motion.div
           ref={ref}
@@ -86,8 +90,8 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="h-px w-12 bg-primary-500" />
-            <span className="text-primary-400 text-sm font-mono uppercase tracking-widest">
+            <div className="h-px w-12" style={{ backgroundColor: "var(--primary)" }} />
+            <span className="text-sm font-mono uppercase tracking-widest" style={{ color: "var(--primary)" }}>
               Work History
             </span>
           </div>
@@ -97,7 +101,10 @@ export default function Experience() {
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500 via-dark-600 to-transparent" />
+            <div
+              className="absolute left-4 md:left-8 top-0 bottom-0 w-px"
+              style={{ background: "linear-gradient(to bottom, var(--primary), var(--border), transparent)" }}
+            />
 
             <div className="space-y-8">
               {experiences.map((exp, i) => (
@@ -110,11 +117,19 @@ export default function Experience() {
                 >
                   {/* Timeline dot */}
                   <div
-                    className={`absolute left-2 md:left-6 top-6 w-5 h-5 rounded-full border-2 ${
+                    className="absolute left-2 md:left-6 top-6 w-5 h-5 rounded-full border-2 flex items-center justify-center"
+                    style={
                       exp.current
-                        ? "bg-primary-500 border-primary-400 shadow-lg shadow-primary-500/50"
-                        : "bg-dark-700 border-dark-500"
-                    } flex items-center justify-center`}
+                        ? {
+                            backgroundColor: "#22c55e",
+                            borderColor: "#4ade80",
+                            boxShadow: "0 0 12px rgba(34,197,94,0.5)",
+                          }
+                        : {
+                            backgroundColor: "var(--bg-card-hover)",
+                            borderColor: "var(--border)",
+                          }
+                    }
                   >
                     {exp.current && (
                       <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
@@ -122,31 +137,58 @@ export default function Experience() {
                   </div>
 
                   <div
-                    className={`card ${"highlight" in exp && exp.highlight ? "border-primary-500/30 bg-primary-500/5" : ""} hover:-translate-y-1`}
+                    className="card hover:-translate-y-1"
+                    style={
+                      exp.current
+                        ? {
+                            borderLeft: "3px solid #22c55e",
+                            boxShadow: "0 0 20px rgba(34,197,94,0.1)",
+                          }
+                        : "highlight" in exp && exp.highlight
+                        ? {
+                            borderColor: "color-mix(in srgb, var(--primary) 30%, transparent)",
+                            backgroundColor: "color-mix(in srgb, var(--primary) 5%, var(--bg-card))",
+                          }
+                        : {}
+                    }
                   >
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                       <div>
                         <div className="flex items-center gap-2 flex-wrap">
-                          <h3 className="text-white font-bold text-lg">
+                          <h3 className="font-bold text-lg" style={{ color: "var(--text)" }}>
                             {exp.role}
                           </h3>
                           {exp.current && (
-                            <span className="px-2 py-0.5 text-xs bg-green-500/20 text-green-400 border border-green-500/30 rounded-full">
+                            <span
+                              className="text-xs px-2 py-1 rounded-full font-medium"
+                              style={{
+                                backgroundColor: "rgba(34,197,94,0.15)",
+                                color: "#22c55e",
+                                border: "1px solid rgba(34,197,94,0.3)",
+                              }}
+                            >
                               Current
                             </span>
                           )}
                           {"highlight" in exp && exp.highlight && (
-                            <span className="px-2 py-0.5 text-xs bg-primary-500/20 text-primary-400 border border-primary-500/30 rounded-full">
+                            <span
+                              className="px-2 py-0.5 text-xs rounded-full"
+                              style={{
+                                backgroundColor: "color-mix(in srgb, var(--primary) 20%, transparent)",
+                                color: "var(--primary)",
+                                border: "1px solid color-mix(in srgb, var(--primary) 30%, transparent)",
+                              }}
+                            >
                               Key Impact
                             </span>
                           )}
                         </div>
-                        <div className="flex items-center gap-1 text-primary-400 font-semibold mt-1">
+                        <div className="flex items-center gap-1 font-semibold mt-1" style={{ color: "var(--primary)" }}>
                           <Briefcase size={14} />
                           <span>{exp.company}</span>
                         </div>
                       </div>
-                      <div className="text-right text-sm text-gray-500 flex flex-col gap-1 shrink-0">
+                      <div className="text-right text-sm flex flex-col gap-1 shrink-0" style={{ color: "var(--text-muted)" }}>
                         <div className="flex items-center gap-1 justify-end">
                           <Calendar size={12} />
                           {exp.period}
@@ -162,9 +204,10 @@ export default function Experience() {
                       {exp.bullets.map((b, j) => (
                         <li
                           key={j}
-                          className="flex items-start gap-2 text-gray-400 text-sm"
+                          className="flex items-start gap-2 text-sm"
+                          style={{ color: "var(--text-muted)" }}
                         >
-                          <span className="text-primary-500 mt-1 shrink-0">▸</span>
+                          <span className="mt-1 shrink-0" style={{ color: "var(--primary)" }}>▸</span>
                           {b}
                         </li>
                       ))}
