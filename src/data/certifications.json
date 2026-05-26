@@ -1,30 +1,30 @@
 [
   {
-    "name": "Agentic AI with Python",
-    "issuer": "Coursera",
-    "date": "2024",
-    "credentialUrl": "/certifications/Coursera Agentic AI with Python Certificate.pdf",
+    "name": "AI Agents and Agentic AI with Python & Generative AI",
+    "issuer": "Coursera / Vanderbilt University",
+    "date": "Aug 2025",
+    "credentialUrl": "https://coursera.org/verify/WGSCD55I7I19",
     "badgeImage": null
   },
   {
-    "name": "Agentic AI Architecture",
-    "issuer": "Coursera",
-    "date": "2024",
-    "credentialUrl": "/certifications/Coursera Agentic AI Architecture Certificate.pdf",
+    "name": "AI Agents and Agentic AI Architecture in Python",
+    "issuer": "Coursera / Vanderbilt University",
+    "date": "Sep 2025",
+    "credentialUrl": "https://coursera.org/verify/7F10TQSI0WUY",
     "badgeImage": null
   },
   {
-    "name": "Custom GPT Development",
-    "issuer": "Coursera",
-    "date": "2024",
-    "credentialUrl": "/certifications/Coursera Custom GPT cert.pdf",
+    "name": "OpenAI GPTs: Creating Your Own Custom AI Assistants",
+    "issuer": "Coursera / Vanderbilt University",
+    "date": "May 2025",
+    "credentialUrl": "https://coursera.org/verify/UTT1VBQ819E0",
     "badgeImage": null
   },
   {
-    "name": "AI/ML Specialization",
-    "issuer": "Coursera",
-    "date": "2024",
-    "credentialUrl": "/certifications/Coursera FL2HH8J0T23D.pdf",
+    "name": "Claude Code: Software Engineering with Generative AI Agents",
+    "issuer": "Coursera / Vanderbilt University",
+    "date": "May 2026",
+    "credentialUrl": "https://coursera.org/verify/FL2HH8J0T23D",
     "badgeImage": null
   },
   {
@@ -42,7 +42,7 @@
     "badgeImage": null
   },
   {
-    "name": "Python 101",
+    "name": "Python 101 for Data Science",
     "issuer": "Coursera / IBM",
     "date": "2023",
     "credentialUrl": "/certifications/Python 101.pdf",

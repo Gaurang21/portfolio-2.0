@@ -32,7 +32,7 @@ const hobbies = [
   {
     emoji: "🎵",
     name: "Music",
-    description: "Lo-fi beats while coding, live concerts on weekends. Also love playing guitar.",
+    description: "Lo-fi beats while coding. Also love playing guitar.",
   },
 ];
 
