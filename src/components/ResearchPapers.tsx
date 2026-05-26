@@ -6,21 +6,21 @@ import { FileText, ExternalLink } from "lucide-react";
 
 const papers = [
   {
-    title: "DocBot: A Medical Consultant Chatbot using Deep Learning Approach",
-    authors: "Gaurang Suki, Mayur Giri, Revati Ganorkar, Shubham Deshpande, Araddhana Deshmukh",
-    venue: "Technical Journal of The Institution of Engineers (India), Vol. 42, Nov. 2018 — ISBN: 978-81-924990-6-2",
-    year: "2018",
-    abstract: "Proposed a robust 5-stage pipeline architecture for a medical consultancy chatbot using deep learning and seq2seq natural language processing. The model interacts with users in natural language, identifies symptoms, suggests probable diagnoses, and recommends relevant specialists — unlike existing platforms (e.g. WebMD) that limit free-form communication.",
-    pdfUrl: "/research-papers/DocBot.pdf",
-    doiUrl: "#",
-  },
-  {
     title: "Textual Content Moderation using Supervised Machine Learning Approach",
     authors: "Revati Ganorkar, Gaurang Suki, Shubham Deshpande, Mayur Giri, Araddhana Deshmukh",
     venue: "ICINC 2019 — International Conference on Internet of Things, Next Generation Network & Cloud Computing",
     year: "2019",
     abstract: "Proposed an efficient automated textual content moderation system to detect hate speech and offensive content on social networking sites using supervised machine learning. Addresses the limitations of manual moderation used by tech giants like Facebook and Microsoft, reducing harm to both users and content moderators.",
     pdfUrl: "/research-papers/ICINC19.pdf",
+    doiUrl: "#",
+  },
+  {
+    title: "DocBot: A Medical Consultant Chatbot using Deep Learning Approach",
+    authors: "Gaurang Suki, Mayur Giri, Revati Ganorkar, Shubham Deshpande, Araddhana Deshmukh",
+    venue: "Technical Journal of The Institution of Engineers (India), Vol. 42, Nov. 2018 — ISBN: 978-81-924990-6-2",
+    year: "2018",
+    abstract: "Proposed a robust 5-stage pipeline architecture for a medical consultancy chatbot using deep learning and seq2seq natural language processing. The model interacts with users in natural language, identifies symptoms, suggests probable diagnoses, and recommends relevant specialists — unlike existing platforms (e.g. WebMD) that limit free-form communication.",
+    pdfUrl: "/research-papers/DocBot.pdf",
     doiUrl: "#",
   },
   {
