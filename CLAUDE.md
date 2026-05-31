@@ -2,8 +2,11 @@
 
 ## ⚠️ Development Rules
 
-### Always build before asking the user to verify
-After making any code changes, **always run `npm run build` and confirm it passes before telling the user to check the browser.** Do not ask the user to open localhost until the build succeeds with zero errors.
+### Screenshots
+**Never take or send screenshots unless the user explicitly asks for them.** For all changes, build and push to `main` — Vercel auto-deploys and the user reviews on the live site directly.
+
+### Always build before pushing
+After any code changes, **always run `npm run build` and confirm it passes before pushing.** Fix all errors silently before pushing.
 
 ```bash
 npm run build   # must show "✓ Compiled successfully" with no TypeScript errors

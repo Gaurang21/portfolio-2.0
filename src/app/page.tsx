@@ -24,11 +24,11 @@ export default function Home() {
       <ImpactNumbers />
       <Experience />
       <Skills />
+      <Education />
       <Projects />
-      <CurrentlyLearning />
       <Certifications />
       <ResearchPapers />
-      <Education />
+      <CurrentlyLearning />
       <Testimonials />
       <Hobbies />
       <Contact />
