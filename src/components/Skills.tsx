@@ -7,7 +7,7 @@ const skillCategories = [
   {
     name: "Languages",
     icon: "{}",
-    skills: ["Java", "Python", "JavaScript", "TypeScript", "Ruby", "C#", "SQL"],
+    skills: ["Python", "JavaScript", "TypeScript", "Ruby", "SQL"],
     color: "primary",
   },
   {
@@ -16,10 +16,9 @@ const skillCategories = [
     skills: [
       "React.js",
       "Next.js",
-      "Angular.js",
+      "Angular",
       "Redux",
-      "HTML5",
-      "CSS3",
+      "Mapbox",
       "Tailwind CSS",
     ],
     color: "accent",
@@ -30,18 +29,32 @@ const skillCategories = [
     skills: [
       "Node.js",
       "Express.js",
-      "Spring Boot",
-      "ASP.NET/C# MVC",
       "Flask",
       "Ruby on Rails",
+      "ASP.NET/C# MVC",
       "REST APIs",
     ],
     color: "green",
   },
   {
+    name: "AI & Data",
+    icon: "🤖",
+    skills: [
+      "RAG",
+      "Agentic AI",
+      "OpenAI",
+      "Anthropic",
+      "LangChain",
+      "Embeddings",
+      "Vector Databases",
+      "Semantic Search",
+    ],
+    color: "purple",
+  },
+  {
     name: "Cloud & DevOps",
     icon: "☁️",
-    skills: ["AWS", "Docker", "Jenkins", "Git", "CI/CD"],
+    skills: ["AWS", "Oracle Cloud", "Docker", "Jenkins", "Git", "CI/CD"],
     color: "orange",
   },
   {
@@ -69,6 +82,7 @@ const colorMap: Record<string, string> = {
   primary: "",  // handled inline
   accent: "",   // handled inline
   green: "bg-green-500/10 text-green-300 border-green-500/20 hover:bg-green-500/20",
+  purple: "bg-purple-500/10 text-purple-300 border-purple-500/20 hover:bg-purple-500/20",
   orange: "bg-orange-500/10 text-orange-300 border-orange-500/20 hover:bg-orange-500/20",
   pink: "bg-pink-500/10 text-pink-300 border-pink-500/20 hover:bg-pink-500/20",
   teal: "bg-teal-500/10 text-teal-300 border-teal-500/20 hover:bg-teal-500/20",
@@ -77,6 +91,7 @@ const colorMap: Record<string, string> = {
 
 const headerColorMap: Record<string, string> = {
   green: "text-green-400",
+  purple: "text-purple-400",
   orange: "text-orange-400",
   pink: "text-pink-400",
   teal: "text-teal-400",

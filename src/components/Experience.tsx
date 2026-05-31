@@ -7,15 +7,17 @@ import { Briefcase, MapPin, Calendar } from "lucide-react";
 const experiences = [
   {
     company: "Cisco Systems",
-    role: "Software Engineer",
+    role: "Senior Software Engineer",
     period: "April 2022 – Present",
     location: "San Jose, CA",
     bullets: [
-      "Built enterprise IoT web application using React and Node.js serving thousands of internal users",
-      "Translated complex Figma designs into production-ready component-based React code",
-      "Contributing to Ruby on Rails API middleware and React frontend features",
+      "Architected and led a 6-month ground-up rebuild of Cisco IoT, replacing a single-technology-per-network model with per-Access-Point technology assignment — deployed across ~1,000+ customer IoT networks with 90% test coverage",
+      "Designed a zero-downtime migration that auto-synced legacy configurations into the new data model via a distributed background job queue, moving the entire customer base with no service disruption",
+      "Built RAG-powered AI agents for two products using OpenAI embeddings and a vector database, surfaced through VSCode/GitHub IDE integrations and a Webex bot — cutting support resolution time by 30%",
+      "Built an interactive enterprise web app with React and Mapbox rendering custom indoor building maps that auto-computes optimal Access Point placement across large campuses, cutting deployment from days to minutes",
+      "Drove the Zigbee smart-lock feature to General Availability and integrated third-party ESL hardware, opening new hospitality and retail customer segments",
     ],
-    tech: ["React", "Node.js", "Ruby on Rails", "TypeScript", "IoT"],
+    tech: ["React", "Node.js", "Ruby on Rails", "PostgreSQL", "OpenAI", "RAG", "Mapbox", "TypeScript"],
     current: true,
   },
   {
@@ -24,11 +26,10 @@ const experiences = [
     period: "Oct 2021 – April 2022",
     location: "San Jose, CA",
     bullets: [
-      "Built Python async tool using Twisted and Klein frameworks for the Webex platform",
-      "Developed React.js / Flask internal UI deployed on Docker containers",
-      "Implemented E2E testing with Selenium and Appium; built Java test APIs",
+      "Built and maintained an internal Python diagnostics tool (Twisted, Klein) that collected and surfaced Webex meeting-app logs, accelerating root-cause analysis during production failures",
+      "Developed an internal tool UI with React and Flask APIs, containerized via Docker, and authored Java, Selenium, and Appium automated tests for end-to-end Webex platform coverage",
     ],
-    tech: ["Python", "React.js", "Flask", "Docker", "Selenium", "Java"],
+    tech: ["Python", "React.js", "Flask", "Docker", "Selenium", "Appium", "Java"],
     current: false,
   },
   {
@@ -37,8 +38,8 @@ const experiences = [
     period: "June 2021 – Oct 2021",
     location: "San Jose, CA",
     bullets: [
-      "Designed and built RESTful APIs with ASP.NET/C# MVC with Swagger documentation",
-      "Developed React components featuring Victory chart data visualizations",
+      "Designed and built RESTful services using ASP.NET/C# MVC, documented with Swagger, to power Sikka's new product",
+      "Developed a React UI with interactive data visualizations (Victory charts) and partnered with QA on test plans to reduce functional and performance defects",
     ],
     tech: ["ASP.NET", "C#", "React", "Swagger", "Victory Charts"],
     current: false,
@@ -49,26 +50,12 @@ const experiences = [
     period: "May 2020 – May 2021",
     location: "San Jose, CA",
     bullets: [
-      "Built React supplier portal with Python data pipeline and Tableau visualizations",
-      "Executed Quickbase → Jira migration saving $25,000 in annual seat licensing costs",
-      "Built Java + AWS SES email automation system reducing staff allocation time by 10%",
-      "Created Python data processing pipeline reducing manual work by 20%",
+      "Migrated supplier metrics from Quickbase to Jira with Python, saving ~$25K/year in licensing, and built interactive dashboards using Groovy and C3.js",
+      "Automated monthly supplier reporting with Java and AWS SES, reducing staff allocation time 10%, and built a React + Python portal feeding real-time Tableau dashboards",
     ],
-    tech: ["React", "Python", "Java", "AWS SES", "Tableau", "Jira"],
+    tech: ["React", "Python", "Java", "AWS SES", "Tableau", "Jira", "Groovy"],
     current: false,
     highlight: true,
-  },
-  {
-    company: "AUTOCITIE",
-    role: "Full Stack Developer",
-    period: "May 2018 – May 2019",
-    location: "Pune, India",
-    bullets: [
-      "Built SpringBoot RESTful endpoints and React.js frontend for the platform",
-      "Implemented BDD unit/integration tests and Apache JMeter performance tests",
-    ],
-    tech: ["Spring Boot", "React.js", "BDD", "JMeter", "Java"],
-    current: false,
   },
 ];
 

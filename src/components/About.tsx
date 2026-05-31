@@ -46,34 +46,30 @@ export default function About() {
             {/* Bio */}
             <div className="space-y-6">
               <p className="text-lg leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                I&apos;m a Full Stack Software Engineer currently working at{" "}
+                I&apos;m a Senior Software Engineer at{" "}
                 <span style={{ color: "var(--primary-light, var(--primary))", fontWeight: 600 }}>
                   Cisco Systems
                 </span>{" "}
-                in San Jose, CA — building enterprise IoT web applications that
-                scale.
+                in the Bay Area — building systems that quietly take work off people&apos;s plates.
               </p>
               <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                With a full stack background spanning{" "}
+                My work lives at the intersection of{" "}
+                <span style={{ color: "var(--text)" }}>full-stack engineering</span> and{" "}
+                <span style={{ color: "var(--text)" }}>applied AI</span>: designing the architecture,
+                writing the APIs and data models, and shipping the UI on top — across{" "}
                 <span style={{ color: "var(--text)" }}>IoT</span>,{" "}
                 <span style={{ color: "var(--text)" }}>SaaS</span>,{" "}
                 <span style={{ color: "var(--text)" }}>telecom</span>, and{" "}
-                <span style={{ color: "var(--text)" }}>healthcare</span> verticals, I
-                thrive at the intersection of clean code and great user
-                experience. I&apos;m passionate about systems that scale and
-                UIs that delight.
+                <span style={{ color: "var(--text)" }}>healthcare</span>.
+                At Cisco I rebuilt an IoT platform from its foundations and built{" "}
+                <span style={{ color: "var(--text)" }}>RAG-powered AI agents</span>{" "}
+                that cut support resolution time by 30%.
               </p>
               <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                I hold an{" "}
-                <span style={{ color: "var(--text)" }}>
-                  MS in Computer Science from Cal State East Bay
-                </span>{" "}
-                and a{" "}
-                <span style={{ color: "var(--text)" }}>
-                  BE in Computer Engineering from Savitribai Phule Pune
-                  University
-                </span>
-                .
+                There&apos;s a thread through the work I&apos;m proudest of: it replaces something{" "}
+                <span style={{ color: "var(--text)" }}>slow and manual</span> with something{" "}
+                <span style={{ color: "var(--text)" }}>fast and automatic</span>.
+                90% test coverage isn&apos;t a chore — it&apos;s how I sleep at night.
               </p>
 
               <div className="flex items-center gap-2" style={{ color: "var(--text-muted)" }}>
@@ -83,10 +79,10 @@ export default function About() {
 
               <div className="flex flex-wrap gap-3 pt-2">
                 {[
-                  "Clean Code",
-                  "Great UX",
+                  "Applied AI & RAG",
                   "Systems that Scale",
-                  "Open Source",
+                  "Clean Code",
+                  "90% Test Coverage",
                 ].map((tag) => (
                   <span key={tag} className="tag">
                     {tag}

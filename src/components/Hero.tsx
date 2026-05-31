@@ -6,8 +6,8 @@ import { Download, ChevronDown } from "lucide-react";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 const titles = [
-  "Full Stack Engineer",
-  "React & Node.js Developer",
+  "Software Engineer",
+  "AI Engineer",
   "Cloud & API Architect",
   "Problem Solver",
 ];
