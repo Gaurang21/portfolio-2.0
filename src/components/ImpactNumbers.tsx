@@ -31,11 +31,11 @@ const metrics = [
     color: "from-green-400 to-emerald-600",
   },
   {
-    value: 25000,
+    value: 1,
     prefix: "$",
-    suffix: "",
+    suffix: "M+",
     label: "Cost Savings",
-    description: "Quickbase → Jira migration saved per year in licensing costs",
+    description: "Labor costs saved via Cisco Spaces AP placement automation",
     color: "from-teal-400 to-cyan-600",
   },
   {
