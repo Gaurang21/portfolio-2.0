@@ -5,39 +5,39 @@ import { motion, useInView } from "framer-motion";
 
 const learningItems = [
   {
-    name: "Kubernetes & Container Orchestration",
-    icon: "⚓",
-    progress: 45,
-    description: "Exploring k8s deployments, Helm charts, and cluster management",
+    name: "Agentic Workflows & Model Context Protocol (MCP)",
+    icon: "🧠",
+    progress: 70,
+    description: "Building multi-step AI agents and integrating tools via MCP for real-world automation",
+    status: "Active",
+  },
+  {
+    name: "AI Evaluation & Observability",
+    icon: "📊",
+    progress: 50,
+    description: "Measuring LLM output quality, tracing agent runs, and building eval pipelines",
+    status: "In Progress",
+  },
+  {
+    name: "LangGraph",
+    icon: "🔗",
+    progress: 55,
+    description: "Designing stateful, cyclical agent graphs for complex multi-step reasoning tasks",
     status: "In Progress",
   },
   {
     name: "LLM APIs & AI-Powered Applications",
     icon: "🤖",
-    progress: 65,
-    description: "Building integrations with OpenAI, Anthropic, and LangChain",
+    progress: 80,
+    description: "Production integrations with OpenAI, Anthropic, and LangChain in real systems",
     status: "Active",
-  },
-  {
-    name: "Rust (Systems Programming)",
-    icon: "🦀",
-    progress: 25,
-    description: "Learning memory safety, ownership model, and systems-level code",
-    status: "Starting",
-  },
-  {
-    name: "GraphQL",
-    icon: "◈",
-    progress: 55,
-    description: "Schema design, resolvers, and Apollo Client integrations",
-    status: "In Progress",
   },
 ];
 
 const statusStyle: Record<string, React.CSSProperties> = {
   "In Progress": { backgroundColor: 'color-mix(in srgb, var(--primary) 20%, transparent)', color: 'var(--primary)', border: '1px solid color-mix(in srgb, var(--primary) 30%, transparent)' },
-  Active: { backgroundColor: 'rgba(34,197,94,0.2)', color: '#86efac', border: '1px solid rgba(34,197,94,0.3)' },
-  Starting: { backgroundColor: 'rgba(234,179,8,0.2)', color: '#fde047', border: '1px solid rgba(234,179,8,0.3)' },
+  Active: { backgroundColor: 'rgba(22,163,74,0.15)', color: '#16a34a', border: '1px solid rgba(22,163,74,0.4)' },
+  Starting: { backgroundColor: 'rgba(217,119,6,0.15)', color: '#d97706', border: '1px solid rgba(217,119,6,0.4)' },
 };
 
 export default function CurrentlyLearning() {
